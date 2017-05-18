@@ -18,7 +18,8 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^polls/',include('polls.urls')),
+    # 设置命名空间
+    url(r'^polls/',include('polls.urls',namespace="polls")),
 
 
 ]

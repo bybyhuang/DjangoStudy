@@ -6,11 +6,13 @@ class ChoiceInline(admin.TabularInline):
     extra = 3
 
 class QuestionAdmin(admin.ModelAdmin):
+
     inlines = [ChoiceInline]
     list_display = ('question_text','pub_date')
     # 添加的过滤器
     list_filter = ['pub_date']
     search_fields = ['question_text']
+
 
 
 admin.site.register(Question,QuestionAdmin)
